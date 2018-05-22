@@ -3,20 +3,26 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-filepickerio"
-    version="0.0.8">
+    version="0.0.9">
 
-    <name>Filepicker.io</name>
-    <description>Cordova plugin for Filepicker.io native Android SDK http://www.filepicker.io</description>
+    <name>Filestack.io</name>
+    <description>Cordova plugin for Filestack.io native Android/iOS SDK http://www.filestack.io</description>
     <license>Apache 2.0</license>
-    <keywords>cordova,filepicker,filepickerio,filepicker.com,upload</keywords>
-    <issue>https://github.com/dbaq/cordova-plugin-contacts-phone-numbers/issues</issue>
+    <keywords>cordova,filepicker,filepickerio,filepicker.com,upload,filestack,filestackio</keywords>
+    <repo>https://github.com/Generativ/cordova-plugin-filepickerio.git</repo>
+    <issue>https://github.com/Generativ/cordova-plugin-filepickerio/issues</issue>
+    
+    <engines>
+	    <engine name="cordova" version=">=6.0.0"/>
+    </engines>
 
-    <js-module src="www/filepickerio.js" name="filepickerio">
-        <clobbers target="window.filepicker" />
-    </js-module>
+    
 
     <!-- android -->
     <platform name="android">
+        <js-module src="www/filepickerio.js" name="filepickerio">
+            <clobbers target="window.filepicker" />
+        </js-module>
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="filepickerio">
                 <param name="android-package" value="com.dbaq.cordova.filepickerio.FilePickerIO"/>
@@ -34,6 +40,9 @@
 
     <!-- ios -->
     <platform name="ios">
+        <js-module src="www/filepickerio.js" name="filepickerio">
+            <clobbers target="window.filepicker" />
+        </js-module>
         <config-file target="config.xml" parent="/*">
           <feature name="filepickerio">
             <param name="ios-package" value="FilePickerIO"/>
